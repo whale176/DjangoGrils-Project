@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <hi class="site-title text-center">
+            <a href="/">Test Django Website</a>
+        </hi>
+    </div>
+    <div class="container post post-detail">
+        <div class="post-heading">
+            <h1 class="title">
+                <a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a>
+            </h1>
+            <div class="date">{{ post.created_at|date:'Y / m / d' }}</div>
+        </div>
+        <div class="location">
+            <i class="fa fa-map-market"></i>
+            <span id="location-content">{{ post.location }}</span>
+        </div>
+        <div id="map-canvas" class="map"></div>
+        <div class="post-content">{{ post.content }}</div>
+        <hr class="fancy-line">
+        <img class="photo" src="{{ post.photo }}" alt="">
+    </div>
+    <script type="text/javascript" src="{{STATIC_URL}}js/map.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/js"></script>
+</body>
+</html>
