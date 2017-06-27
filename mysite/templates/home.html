@@ -21,7 +21,7 @@
             <div class="post">
                 <div class="post-heading">
                     <h2 class="title">
-                        <a href="#">{{ post.title }}</a>
+                        <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                     </h2>
                     <div class="author">
                         By
@@ -40,7 +40,7 @@
                     {{ post.content }}
                 </div>
                 <div class="post-footer">
-                    <a class="read-more" href="#">
+                    <a class="read-more" href="{% url 'post_detail' pk=post.pk %}">
                         Read More <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>

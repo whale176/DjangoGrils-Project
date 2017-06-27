@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello_world),
     url(r'^$', home),
-    url(r'^post/(?P<id>\d+)/$', post_detail, name='post_detail'),
+    url(r'^post/(?P<pk>\d+)/$', post_detail, name='post_detail'),
     url(r'^showform/', show_form),
     url(r'^accounts/', include('allauth.urls')),
 )
